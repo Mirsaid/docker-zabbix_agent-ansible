@@ -1,0 +1,8 @@
+---
+- name: Disable Docker root access via TCP
+  lineinfile:
+    path: /etc/default/docker
+    regexp: "^DOCKER_OPTS"
+    line: 'DOCKER_OPTS="-H unix:///var/run/docker.sock"'
+    state: present
+  notify: restart docker

@@ -1,0 +1,6 @@
+---
+- name: Add Docker repository
+  apt_repository:
+    repo: "{{ docker_repository }}"
+    state: present
+    filename: docker-ce
