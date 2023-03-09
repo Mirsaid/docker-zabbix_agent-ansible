@@ -1,6 +1,6 @@
 ---
 - name: Install Docker and Zabbix agent
-  hosts: your_host
+  hosts: agent
   become: true
 
   tasks:
