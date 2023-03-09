@@ -3,6 +3,9 @@
   hosts: agent
   become: true
   gather_facts: False
+  roles:
+    - docker
+    - zabbix-agent
 
   tasks:
     - name: Update apt cache
@@ -20,8 +23,11 @@
           - software-properties-common
         state: present
 
-    - include_role:
-        name: docker
-
-    - include_role:
-        name: zabbix-agent
+                
+        # - name: Install Docker
+        #include_role:
+        #name: docker
+    
+        #  - name: Install Zabbix agent    
+        #include_role:
+        #name: zabbix-agent
